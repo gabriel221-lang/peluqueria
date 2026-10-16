@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boca Juniors - La Pasión Xeneize</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Teko:wght@600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #001226;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .font-teko {
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .glass-card {
+            background: rgba(0, 34, 68, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 199, 44, 0.25);
+        }
+
+        .glass-card-gold {
+            background: rgba(255, 199, 44, 0.12);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 199, 44, 0.4);
+        }
+
+        @keyframes pulseSlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255,199,44,0.4)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(255,199,44,0.8)); }
+        }
+
+        .animate-shield {
+            animation: pulseSlow 4s infinite ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+        }
+
+        .shaking-screen {
+            animation: shake 0.15s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen pb-12">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-[#FFC72C]/30 px-6 py-2">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <img src="/empanadas/Gemini_Generated_Image_nj0bwnnj0bwnnj0b.jfif" alt="Escudo Boca" class="h-10 w-auto rounded object-contain drop-shadow-[0_0_8px_rgba(255,199,44,0.8)]">
+                <h1 class="font-teko text-3xl font-bold text-[#FFC72C] tracking-wide">BOCA JUNIORS</h1>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="#club" class="hover:text-[#FFC72C] transition-colors">EL CLUB</a>
+                <a href="#latido" class="hover:text-[#FFC72C] transition-colors">LA BOMBONERA LATE</a>
+                <a href="#canticos" class="hover:text-[#FFC72C] transition-colors">CÁNTICOS</a>
+                <a href="#idolos" class="hover:text-[#FFC72C] transition-colors">ÍDOLOS</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PORTADA / HERO -->
+    <section class="relative z-10 pt-10 pb-12 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <img src="/empanadas/logonuevo.jpg" alt="Escudo Grande Boca" class="w-40 md:w-48 mx-auto animate-shield rounded-xl mb-4 shadow-2xl">
+            <h1 class="font-teko text-6xl md:text-8xl font-black text-[#FFC72C] leading-none mb-2">
+                LA MITAD MÁS UNO
+            </h1>
+            <p class="text-blue-100 text-base md:text-lg max-w-xl mx-auto">
+                Bienvenidos a la experiencia digital del Rey de Copas.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: EL CLUB Y SU HISTORIA -->
+    <section id="club" class="relative z-10 py-10 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="font-teko text-5xl font-bold text-[#FFC72C] uppercase">EL CLUB Y SU HISTORIA</h2>
+            <p class="text-blue-200 text-sm">Fundado el 3 de abril de 1905 en La Boca</p>
+            <p class="text-blue-200 text-sm">35 titulos de liga</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 text-center hover:border-[#FFC72C] transition-all">
+                <div class="text-4xl mb-3">🏛️</div>
+                <h3 class="font-teko text-2xl text-[#FFC72C] font-bold">Fundación 1905</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">Baglietto, Scarpatti, Sana y los hermanos Farenga crearon el club en la Plaza Solís.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 text-center hover:border-[#FFC72C] transition-all">
+                <h4 class="font-teko text-2xl text-[#FFC72C]">35 titulos de liga</h4>
+                <p class="text-xs text-gray-300 leading-relaxed">Son los titulos ganados en la liga Argentina</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 text-center hover:border-[#FFC72C] transition-all">
+                <div class="text-4xl mb-3">🚢</div>
+                <h3 class="font-teko text-2xl text-[#FFC72C] font-bold">Azul y Oro</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">Colores inspirados en la bandera del buque sueco <i>Drottning Sophia</i> en 1907.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 text-center hover:border-[#FFC72C] transition-all">
+                <div class="text-4xl mb-3">🗣️</div>
+                <h3 class="font-teko text-2xl text-[#FFC72C] font-bold">Jugador N° 12</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">Nacido en la mítica gira europea de 1925 junto al hincha "Cacho" Caffarena.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 text-center hover:border-[#FFC72C] transition-all">
+                <div class="text-4xl mb-3">⭐</div>
+                <h3 class="font-teko text-2xl text-[#FFC72C] font-bold">Orgullo Único</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">El único club del fútbol argentino que jamás descendió de categoría.</p>
+            </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="glass-card-gold p-6 rounded-2xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto">
+            <div>
+                <p class="font-teko text-4xl font-bold text-[#FFC72C]">1905</p>
+                <p class="text-xs text-blue-100 uppercase font-semibold">Año de Fundación</p>
+                
+            </div>
+            <div>
+                <p class="font-teko text-4xl font-bold text-[#FFC72C]">+70</p>
+                <p class="text-xs text-blue-100 uppercase font-semibold">Títulos Oficiales</p>
+            </div>
+            <div>
+                <p class="font-teko text-4xl font-bold text-[#FFC72C]">18</p>
+                <p class="text-xs text-blue-100 uppercase font-semibold">Copas Internacionales</p>
+            </div>
+            <div>
+                <p class="font-teko text-4xl font-bold text-[#FFC72C]">0</p>
+                <p class="text-xs text-blue-100 uppercase font-semibold">Descensos</p>
+            </div>
+            <div class="glass-card-gold p-6 rounded-2xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto">
+                <p class="font-teko text-4xl font-bold text-{#FFC72C}">35</p>
+                <p class="text-xs text-blue-100 uppercase font-semibold">Titulos de liga</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: LA BOMBONERA LATE -->
+    <section id="latido" class="relative z-10 py-12 px-4 max-w-3xl mx-auto text-center">
+        <div class="glass-card rounded-3xl p-8 border-2 border-[#FFC72C]/50 relative overflow-hidden shadow-2xl">
+            <span class="bg-[#FFC72C]/20 text-[#FFC72C] text-xs font-bold px-4 py-1.5 rounded-full border border-[#FFC72C]/40 uppercase tracking-widest inline-block mb-3">
+                Simulador Atmosférico
+                <img src="/empanadas/laboca.jpg" alt="" srcset="">
+            </span>
+
+            <h2 class="font-teko text-5xl font-bold text-[#FFC72C] uppercase leading-none mb-2">
+                "LA BOMBONERA NO TEMBLA, LATE"
+            </h2>
+            <p class="text-blue-200 text-sm max-w-md mx-auto mb-6">
+                Presiona el corazón para activar la vibración sísmica del estadio y el bombo de la hinchada.
+            </p>
+
+            <button id="heartBtn" onclick="toggleLatido()" class="w-32 h-32 rounded-full bg-gradient-to-br from-[#FFC72C] to-yellow-600 text-[#002244] font-black text-sm mx-auto flex flex-col items-center justify-center gap-1 shadow-[0_0_40px_rgba(255,199,44,0.6)] hover:scale-105 active:scale-95 transition-all cursor-pointer border-2 border-yellow-300">
+                <i data-lucide="heart" class="w-8 h-8 fill-[#002244] animate-pulse"></i>
+                <span id="btnText" class="text-xs font-bold uppercase tracking-wider">¡LATIR!</span>
+            </button>
+
+            <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-[#FFC72C]/20">
+                <div class="glass-card-gold p-3 rounded-xl">
+                    <p class="text-[10px] text-blue-200 uppercase font-semibold">Intensidad</p>
+                    <p id="dbVal" class="font-teko text-3xl text-[#FFC72C] font-bold">131 dB</p>
+                </div>
+                <div class="glass-card-gold p-3 rounded-xl">
+                    <p class="text-[10px] text-blue-200 uppercase font-semibold">Frecuencia</p>
+                    <p id="bpmVal" class="font-teko text-3xl text-[#FFC72C] font-bold">140 BPM</p>
+                </div>
+                <div class="glass-card-gold p-3 rounded-xl">
+                    <p class="text-[10px] text-blue-200 uppercase font-semibold">Estado</p>
+                    <p id="statusVal" class="font-teko text-3xl text-[#FFC72C] font-bold">REPOSO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: CÁNTICOS DE LA HINCHADA -->
+    <section id="canticos" class="relative z-10 py-12 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="font-teko text-5xl font-bold text-[#FFC72C] uppercase">CÁNTICOS DE LA DOCE</h2>
+            <p class="text-blue-200 text-sm">Las canciones más icónicas retumbando en la tribuna</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            
+            <!-- Cántico 1 -->
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 flex flex-col justify-between hover:border-[#FFC72C] transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-teko text-3xl text-[#FFC72C] font-bold">BOCA, MI BUEN AMIGO</h3>
+                        <button onclick="sonarBombo()" class="bg-[#FFC72C] text-[#002244] p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-md">
+                            <i data-lucide="play" class="w-5 h-5 fill-[#002244]"></i>
+                        </button>
+                    </div>
+                    <blockquote class="text-xs text-gray-300 italic border-l-2 border-[#FFC72C] pl-3 py-1 space-y-1">
+                        <p>"Boca, mi buen amigo,</p>
+                        <p>esta campaña volveremos a estar contigo.</p>
+                        <p>Te alentaremos de corazón,</p>
+                        <p>esta es tu hinchada que te quiere ver campeón..."</p>
+                    </blockquote>
+                    <audio src="/miarchivo.mp3/mi_buen_amigo.wav"></audio>
+                </div>
+            </div>
+
+            <!-- Cántico 2 -->
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 flex flex-col justify-between hover:border-[#FFC72C] transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-teko text-3xl text-[#FFC72C] font-bold">DALE BOCA, DALE BO</h3>
+                        <button onclick="sonarBombo()" class="bg-[#FFC72C] text-[#002244] p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-md">
+                            <i data-lucide="play" class="w-5 h-5 fill-[#002244]"></i>
+                        </button>
+                    </div>
+                    <blockquote class="text-xs text-gray-300 italic border-l-2 border-[#FFC72C] pl-3 py-1 space-y-1">
+                        <p>"Dale Boca, dale bo...</p>
+                        <p>Dale Boca, dale bo...</p>
+                        <p>Y dale Bo, dale Boca, dale Bo!"</p>
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Cántico 3 -->
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 flex flex-col justify-between hover:border-[#FFC72C] transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-teko text-3xl text-[#FFC72C] font-bold">QUIERO LA LIBERTADORES</h3>
+                        <button onclick="sonarBombo()" class="bg-[#FFC72C] text-[#002244] p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-md">
+                            <i data-lucide="play" class="w-5 h-5 fill-[#002244]"></i>
+                        </button>
+                    </div>
+                    <blockquote class="text-xs text-gray-300 italic border-l-2 border-[#FFC72C] pl-3 py-1 space-y-1">
+                        <p>"Y dale alegría, alegría a mi corazón,</p>
+                        <p>la Copa Libertadores es mi obsesión,</p>
+                        <p>tenés que dejar el alma y el corazón..."</p>
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Cántico 4 -->
+            <div class="glass-card p-6 rounded-2xl border border-[#FFC72C]/30 flex flex-col justify-between hover:border-[#FFC72C] transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-teko text-3xl text-[#FFC72C] font-bold">DESDE EL DÍA EN QUE NACÍ</h3>
+                        <button onclick="sonarBombo()" class="bg-[#FFC72C] text-[#002244] p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-md">
+                            <i data-lucide="play" class="w-5 h-5 fill-[#002244]"></i>
+                        </button>
+                    </div>
+                    <blockquote class="text-xs text-gray-300 italic border-l-2 border-[#FFC72C] pl-3 py-1 space-y-1">
+                        <p>"Desde el día en que nací me hice de Boca,</p>
+                        <p>siempre a tu lado alentando con la boca,</p>
+                        <p>esta hinchada nunca te va a abandonar..."</p>
+                    </blockquote>
+                </div>
+            </div>
+
+    <!-- Tarjeta Cántico 1 -->
+<button onclick="reproducirCantico('audio1')" class="bg-[#FFC72C] text-[#002244] p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-md">
+    <i data-lucide="play" class="w-5 h-5 fill-[#002244]"></i>
+</button>
+
+<!-- Tarjeta Cántico 2 -->
+<button onclick="reproducirCantico('audio2')" class="bg-[#FFC72C] text-[#002244] p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-md">
+    <i data-lucide="play" class="w-5 h-5 fill-[#002244]"></i>
+</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: ÍDOLOS HISTÓRICOS -->
+    <section id="idolos" class="relative z-10 py-12 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="font-teko text-5xl font-bold text-[#FFC72C] uppercase">LEYENDAS XENEIZES</h2>
+            <p class="text-blue-200 text-sm">Los nombres marcados a fuego en la gloria del club</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <!-- Maradona -->
+            <div class="glass-card rounded-2xl p-6 text-center border border-[#FFC72C]/30 hover:border-[#FFC72C] transition-all group">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-[#FFC72C] to-yellow-600 flex items-center justify-center text-3xl font-black text-[#002244] shadow-lg group-hover:scale-110 transition-transform">
+                    10
+                </div>
+                <h3 class="font-teko text-3xl font-bold text-[#FFC72C]">MARADONA</h3>
+                <p class="text-xs text-blue-200 font-semibold mb-2 uppercase">El Pelusa</p>
+                <p class="text-xs text-gray-300 leading-relaxed">Amor incondicional y eterno por la camiseta azul y oro. Campeón Metropolitano 1981.</p>
+            </div>
+
+            <!-- Riquelme -->
+            <div class="glass-card rounded-2xl p-6 text-center border border-[#FFC72C]/30 hover:border-[#FFC72C] transition-all group">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-[#FFC72C] to-yellow-600 flex items-center justify-center text-3xl font-black text-[#002244] shadow-lg group-hover:scale-110 transition-transform">
+                    10
+                </div>
+                <h3 class="font-teko text-3xl font-bold text-[#FFC72C]">RIQUELME</h3>
+                <p class="text-xs text-blue-200 font-semibold mb-2 uppercase">El Último Diez</p>
+                <p class="text-xs text-gray-300 leading-relaxed">Magia pura. 3 veces Campeón de la Copa Libertadores y Campeón del Mundo 2000.</p>
+            </div>
+
+            <!-- Palermo -->
+            <div class="glass-card rounded-2xl p-6 text-center border border-[#FFC72C]/30 hover:border-[#FFC72C] transition-all group">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-[#FFC72C] to-yellow-600 flex items-center justify-center text-3xl font-black text-[#002244] shadow-lg group-hover:scale-110 transition-transform">
+                    9
+                </div>
+                <h3 class="font-teko text-3xl font-bold text-[#FFC72C]">PALERMO</h3>
+                <p class="text-xs text-blue-200 font-semibold mb-2 uppercase">El Titán</p>
+                <p class="text-xs text-gray-300 leading-relaxed">Máximo goleador histórico con 236 goles inolvidables de todas las formas posibles.</p>
+            </div>
+
+            <!-- Tevez -->
+            <div class="glass-card rounded-2xl p-6 text-center border border-[#FFC72C]/30 hover:border-[#FFC72C] transition-all group">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-[#FFC72C] to-yellow-600 flex items-center justify-center text-3xl font-black text-[#002244] shadow-lg group-hover:scale-110 transition-transform">
+                    32
+                </div>
+                <h3 class="font-teko text-3xl font-bold text-[#FFC72C]">TEVEZ</h3>
+                <p class="text-xs text-blue-200 font-semibold mb-2 uppercase">El Jugador del Pueblo</p>
+                <p class="text-xs text-gray-300 leading-relaxed">Surgido de la cantera, multicampeón nacional e internacional derrochando garra xeneize.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        lucide.createIcons();
+
+        let audioCtx = null;
+        let latidoInterval = null;
+        let isLatido = false;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playKickSound() {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            osc.frequency.setValueAtTime(140, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(30, audioCtx.currentTime + 0.18);
+            
+            gain.gain.setValueAtTime(1, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.18);
+            
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.18);
+        }
+
+        function toggleLatido() {
+            initAudio();
+            isLatido = !isLatido;
+            const btnText = document.getElementById('btnText');
+            const statusVal = document.getElementById('statusVal');
+
+            if (isLatido) {
+                document.body.classList.add('shaking-screen');
+                btnText.innerText = "¡DETENER!";
+                statusVal.innerText = "LATIENDO 🥁";
+
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 80,
+                        spread: 90,
+                        origin: { y: 0.6 },
+                        colors: ['#FFC72C', '#002244', '#ffffff']
+                    });
+                }
+
+                latidoInterval = setInterval(() => {
+                    playKickSound();
+                }, 430);
+            } else {
+                document.body.classList.remove('shaking-screen');
+                btnText.innerText = "¡LATIR!";
+                statusVal.innerText = "REPOSO";
+                clearInterval(latidoInterval);
+            }
+        }
+
+        function sonarBombo() {
+            initAudio();
+            playKickSound();
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 40,
+                    spread: 60,
+                    origin: { y: 0.7 },
+                    colors: ['#FFC72C', '#002244']
+                });
+            }
+        }
+    </script>
+
+<button onclick="sonarbombon()">Sonar Bombón</button>
+
+<script>
+function sonaraudio() {
+    let audio = new Audio("mi_buen_amigo.mp3"); // ruta correcta al archivo
+    audio.play().catch(error => {
+        console.log("Error al reproducir:", error);
+    });
+}
+
+function sonarbombon() {
+    console.log("💣 Bombón activado");
+    sonaraudio();
+}
+</script>
+
+
+
+</body>
+</html>
